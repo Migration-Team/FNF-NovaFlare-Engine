@@ -2,9 +2,8 @@ package objects.screen;
 
 class FPSCounter extends Sprite
 {  
-    public var data:TextField;
+	public var data:TextField;
 	public var title:TextField;
-
 	public var bgSprite:FPSBG;
 	
 	public function new(x:Float = 10, y:Float = 10)
@@ -21,8 +20,11 @@ class FPSCounter extends Sprite
 		this.title = new TextField();
 
 		for(label in [this.data, this.title]) {
-			label.x = 0;
-			label.y = 0;
+			var label = {
+			pos: { x : 0,  y : 0},
+				
+			}
+			label.pos
 			label.defaultTextFormat = new TextFormat(Assets.getFont("assets/fonts/FPS.ttf").fontName, label == this.data ? 36 : 16, 0xFFFFFFFF, false, null, null, label == this.data ? CENTER : RIGHT, 0, 0);			
 			label.multiline = label.wordWrap = false;
 			label.selectable = false; 
